@@ -1,7 +1,7 @@
-def call(String container_name){
+def call(String project_name){
   sh """
-      docker-compose -p ${container_name} down -v --remove-orphans
+      docker-compose -p ${project_name} down -v --remove-orphans
       docker system prune -af
-      docker-compose -p ${container_name} up -d --build
+      docker-compose -p ${project_name} up -d --build
     """
 }
